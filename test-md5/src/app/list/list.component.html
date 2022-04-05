@@ -1,0 +1,46 @@
+<div class="row flex-lg-nowrap">
+  <div class="col mb-3">
+    <div class="e-panel card">
+      <div class="card-body">
+        </div>
+        <div class="e-table">
+          <div class="table-responsive table-lg mt-3">
+            <table class="table table-bordered">
+              <thead>
+              <tr>
+                <th class="align-top">#</th>
+                <th class="max-width">Title</th>
+                <th class="max-width">Author</th>
+                <th>Actions</th>
+              </tr>
+              </thead>
+              <tbody id="tbody">
+              <tr *ngFor="let t of bookList">
+                <td>{{t.id}}</td>
+                <td><a [routerLink]="['/book/detail', t.id]">{{t.title}}</a></td>
+                <td>{{t.author}}</td>
+                <td><a [routerLink]="['/book/update', t.id]"
+                       class="btn btn-sm btn-outline-secondary badge" id="editLg">Edit</a>
+                  <button [routerLink]="['/book/delete', t.id]" class="btn btn-sm btn-outline-secondary badge"
+                          type="button"><i class="fa fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-lg-3 mb-3">
+    <div class="card">
+      <div class="card-body">
+        <a [routerLink]="['/book/create']" class="btn btn-success btn-block">
+          New Book
+        </a>
+        <hr class="my-3">
+      </div>
+    </div>
+  </div>
+

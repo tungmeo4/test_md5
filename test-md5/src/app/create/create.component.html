@@ -1,0 +1,29 @@
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Thêm sách mới</h5>
+      <button [routerLink]="['/book/list']" type="button" class="close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <label>Tên:</label>
+      <div class="input-group mb-3">
+        <input [(ngModel)]="book.title" class="form-control" placeholder="Nhập tên cuốn sách">
+      </div>
+      <label>Tác giả:</label>
+      <div class="input-group mb-3">
+        <input [(ngModel)]="book.author" class="form-control" placeholder="Nhập tên tác giả">
+      </div>
+      <label>Mô tả:</label>
+      <div class="input-group mb-3">
+        <input [(ngModel)]="book.description" class="form-control" placeholder="Nhập mô tả cuốn sách">
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button [routerLink]="['/book/list']" type="button" class="btn btn-secondary" data-dismiss="modal">Thoát
+      </button>
+      <button (click)="createBook()" type="submit" class="btn btn-primary">Thêm sách</button>
+    </div>
+  </div>
+</div>
